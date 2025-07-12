@@ -1,0 +1,25 @@
+{
+  "name": "smart-voice-assistant",
+  "version": "1.0.0",
+  "description": "An AI-powered smart voice assistant that can speak and understand all languages, control devices through voice commands, and enhance performance and responsiveness.",
+  "main": "src/main.ts",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "typescript": "^4.5.4",
+    "ts-node": "^10.4.0",
+    "jest": "^27.0.6",
+    "speech-to-text": "^1.0.0",
+    "text-to-speech-js": "^1.0.0",
+    "google-translate-api": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.0",
+    "@types/node": "^16.0.0"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+}
