@@ -9,10 +9,10 @@ import { Logger } from './utils/logger';
 import { ConfigManager } from './config/configManager';
 
 export class SmartVoiceAssistant {
-    private speechRecognition: SpeechRecognition;
-    private speechSynthesis: SpeechSynthesis;
-    private languageProcessing: LanguageProcessing;
-    private deviceManager: DeviceManager;
+    private speechRecognition!: SpeechRecognition;
+    private speechSynthesis!: SpeechSynthesis;
+    private languageProcessing!: LanguageProcessing;
+    private deviceManager!: DeviceManager;
     private eventEmitter: EventEmitter;
     private logger: Logger;
     private config: ConfigManager;
