@@ -7,7 +7,7 @@
     "start": "ts-node src/main.ts",
     "build": "tsc",
     "test": "jest",
-    "dev": "ts-node --watch src/main.ts",
+    "dev": "ts-node src/main.ts",
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write src/**/*.ts"
   },
