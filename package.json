@@ -1,27 +1,30 @@
-@@ .. @@
-   "scripts": {
-     "start": "ts-node src/main.ts",
-     "build": "tsc",
--    "test": "jest"
-+    "test": "jest",
-+    "dev": "ts-node --watch src/main.ts",
-+    "lint": "eslint src/**/*.ts",
-+    "format": "prettier --write src/**/*.ts"
-   },
-   "dependencies": {
-     "typescript": "^4.5.0",
-     "ts-node": "^10.0.0",
--    "jest": "^27.0.0",
--    "speech-recognition-library": "^1.0.0",
--    "text-to-speech-library": "^1.0.0"
-+    "jest": "^27.0.0"
-   },
-   "devDependencies": {
-     "@types/jest": "^27.0.0",
--    "@types/node": "^16.0.0"
-+    "@types/node": "^16.0.0",
-+    "eslint": "^8.0.0",
-+    "@typescript-eslint/eslint-plugin": "^5.0.0",
-+    "@typescript-eslint/parser": "^5.0.0",
-+    "prettier": "^2.5.0"
-   },
+{
+  "name": "smart-voice-assistant",
+  "version": "1.0.0",
+  "description": "A smart voice assistant with advanced language processing capabilities",
+  "main": "dist/main.js",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "build": "tsc",
+    "test": "jest",
+    "dev": "ts-node --watch src/main.ts",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "dependencies": {
+    "typescript": "^4.5.0",
+    "ts-node": "^10.0.0",
+    "jest": "^27.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.0.0",
+    "@types/node": "^16.0.0",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "prettier": "^2.5.0"
+  },
+  "keywords": ["voice", "assistant", "ai", "speech", "recognition"],
+  "author": "",
+  "license": "MIT"
+}
