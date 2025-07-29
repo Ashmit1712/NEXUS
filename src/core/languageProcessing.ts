@@ -26,11 +26,11 @@ interface ProcessingResult {
 export class LanguageProcessing {
     private logger: Logger;
     private config: ConfigManager;
-    private intentPatterns: Record<string, RegExp[]>;
-    private entityPatterns: Record<string, RegExp>;
+    private intentPatterns!: Record<string, RegExp[]>;
+    private entityPatterns!: Record<string, RegExp>;
 
     constructor(config: ConfigManager) {
-        this.logger = new Logger('LanguageProcessing');
+        this.logger = new Logger('LanguageProcessing', config.getLogLevel());
         this.config = config;
         this.initializePatterns();
     }
