@@ -131,7 +131,7 @@ export class SmartVoiceAssistant {
         }
     }
 
-    private async handleInformationRequest(result: any): Promise<void> {
+    private async handleInformationRequest(_result: any): Promise<void> {
         // Handle information requests like weather, time, etc.
         this.speechSynthesis.speak('I\'m working on getting that information for you.');
     }
