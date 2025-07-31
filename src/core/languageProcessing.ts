@@ -1,4 +1,5 @@
 import { Logger } from '../utils/logger';
+import { LogLevel } from '../utils/logger';
 import { ConfigManager } from '../config/configManager';
 
 interface Intent {
@@ -30,8 +31,10 @@ export class LanguageProcessing {
     private entityPatterns!: Record<string, RegExp>;
 
     constructor(config: ConfigManager) {
-        this.logger = new Logger('LanguageProcessing', config.getLogLevel());
         this.config = config;
+        const logLevelString = this.config.get('logLevel', 'INFO');
+        const logLevel = LogLevel[logLevelString as keyof typeof LogLevel] || LogLevel.INFO;
+        this.logger = new Logger('LanguageProcessing', logLevel);
         this.initializePatterns();
     }
 
