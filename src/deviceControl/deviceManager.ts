@@ -188,12 +188,12 @@ export class DeviceManager {
     }
 
     private controlLight(deviceState: DeviceState, command: Command): Response {
-        const { action, parameters } = command;
+        const { action } = command;
         
         switch (action) {
             case 'turn_on':
                 deviceState.properties.power = true;
-                deviceState.properties.brightness = parameters?.brightness || 100;
+                deviceState.properties.brightness = command.parameters?.brightness || 100;
                 return { success: true, message: 'Light turned on' };
                 
             case 'turn_off':
@@ -209,7 +209,7 @@ export class DeviceManager {
                 return { success: true, message: `Light brightened to ${deviceState.properties.brightness}%` };
                 
             case 'set_brightness':
-                const brightness = parameters?.value || 50;
+                const brightness = command.parameters?.value || 50;
                 deviceState.properties.brightness = Math.max(0, Math.min(100, brightness));
                 return { success: true, message: `Light brightness set to ${deviceState.properties.brightness}%` };
                 
