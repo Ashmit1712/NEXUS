@@ -1,5 +1,12 @@
 import { Logger } from '../utils/logger';
 
+interface OptimizationThresholds {
+    memoryUsage: number;
+    responseTime: number;
+    errorRate: number;
+    throughput: number;
+}
+
 interface PerformanceMetrics {
     memoryUsage: number;
     responseTime: number;
@@ -12,7 +19,7 @@ class PerformanceMonitor {
     private logger: Logger;
     private metrics: PerformanceMetrics;
     private monitoringInterval: NodeJS.Timeout | null = null;
-    private optimizationThresholds = {
+    private optimizationThresholds: OptimizationThresholds = {
         memoryUsage: 100 * 1024 * 1024, // 100MB
         responseTime: 2000, // 2 seconds
         errorRate: 0.05, // 5%
@@ -168,7 +175,7 @@ class PerformanceMonitor {
         return { ...this.metrics };
     }
 
-    public setThresholds(thresholds: Partial<typeof this.optimizationThresholds>): void {
+    public setThresholds(thresholds: Partial<OptimizationThresholds>): void {
         this.optimizationThresholds = { ...this.optimizationThresholds, ...thresholds };
         this.logger.info('Performance thresholds updated');
     }
