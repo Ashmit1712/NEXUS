@@ -242,7 +242,7 @@ export class DeviceManager {
     }
 
     private controlTV(deviceState: DeviceState, command: Command): Response {
-        const { action, parameters } = command;
+        const { action } = command;
         
         switch (action) {
             case 'turn_on':
